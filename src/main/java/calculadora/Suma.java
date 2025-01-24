@@ -1,7 +1,7 @@
 package calculadora;
 
 /**
- * Implementa métodos relacionados con la suma de la calculadora.
+ * Representa los métodos relacionados con la suma de la calculadora.
  *
  *<p>Ejemplo de uso:</p>
  * <pre>{@code
