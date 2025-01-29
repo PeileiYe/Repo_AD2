@@ -16,13 +16,6 @@ package calculadora;
 public class Producto {
 
     /**
-     * Constructor por defecto
-     */
-    public Producto() {
-        super();
-    }
-
-    /**
      * Realiza el producto de dos números reales.
      *
      * @param num1 Primer número real.
