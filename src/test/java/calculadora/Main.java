@@ -7,12 +7,16 @@ import static org.junit.jupiter.api.Assertions.*;
 class Main {
 
     private Suma suma;
-    private Double valorAcumulado = 0.0;
+    private Producto producto;
+
 
     @BeforeEach
     void setUp() {
         suma = new Suma();
+        producto = new Producto();
     }
+
+
 
     @Test
     void sumarDosReales() {
@@ -45,5 +49,26 @@ class Main {
     @Test
     void reiniciarValorAcumulado() {suma.reiniciarValorAcumulado();
         assertEquals(0.0, suma.getValorAcumulado());
+    }
+
+    @Test
+    void multiplicarDosReales() {producto.multiplicarDosReales(1.1,2.2);
+        assertEquals(2.42, producto.multiplicarDosReales(1.1,2.2));
+    }
+
+    @Test
+    void multiplicarDosEnteros() {producto.multiplicarDosEnteros(2,14);
+        assertEquals(28, producto.multiplicarDosEnteros(2,14));
+    }
+
+    @Test
+    void multiplicarTresReales() {producto.multiplicarTresReales(2.2,10.5,3.4);
+        assertEquals(78.54, producto.multiplicarTresReales(2.2,10.5,3.4));
+    }
+
+    @Test
+    void potencia() {producto.potencia(5.6,3);
+        assertEquals(175.62, producto.potencia(5.6,3));
+
     }
 }

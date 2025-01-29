@@ -1,4 +1,5 @@
 package calculadora;
+import java.text.DecimalFormat;
 
 /**
  * Representa los métodos relacionados con la multiplicación de la calculadora.
@@ -22,8 +23,8 @@ public class Producto {
      * @param num2 Segundo número real.
      * @return El producto de los dos números reales.
      */
-    public double multiplicar(double num1, double num2) {
-        return num1 * num2;
+    public double multiplicarDosReales(double num1, double num2) {
+        return Math.round(num1 * num2*100.0) / 100.0;
     }
 
     /**
@@ -33,7 +34,7 @@ public class Producto {
      * @param num2 Segundo número entero.
      * @return El producto de los dos números enteros.
      */
-    public int multiplicar(int num1, int num2) {
+    public int multiplicarDosEnteros(int num1, int num2) {
         return num1 * num2;
     }
 
@@ -45,8 +46,8 @@ public class Producto {
      * @param num3 Tercer número real.
      * @return El producto de los tres números reales.
      */
-    public double multiplicar(double num1, double num2, double num3) {
-        return num1 * num2 * num3;
+    public double multiplicarTresReales(double num1, double num2, double num3) {
+        return Math.round(num1 * num2 * num3*100.0) / 100.0;
     }
 
     /**
@@ -57,7 +58,7 @@ public class Producto {
      * @return El resultado de la operación de potencia.
      */
     public double potencia(double base, double exponente) {
-        return Math.pow(base, exponente);
+        return Math.round(Math.pow(base, exponente)*100.0) / 100.0;
     }
 
 }
