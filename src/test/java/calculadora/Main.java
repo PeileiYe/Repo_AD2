@@ -53,7 +53,7 @@ class Main {
 
     @Test
     void multiplicarDosReales() {producto.multiplicarDosReales(1.1,2.2);
-        assertEquals(2.42, producto.multiplicarDosReales(1.1,2.2));
+        assertEquals(2.42, producto.multiplicarDosReales(1.1,2.2), 0.01);
     }
 
     @Test
@@ -63,12 +63,12 @@ class Main {
 
     @Test
     void multiplicarTresReales() {producto.multiplicarTresReales(2.2,10.5,3.4);
-        assertEquals(78.54, producto.multiplicarTresReales(2.2,10.5,3.4));
+        assertEquals(78.54, producto.multiplicarTresReales(2.2,10.5,3.4),0.01);
     }
 
     @Test
     void potencia() {producto.potencia(5.6,3);
-        assertEquals(175.62, producto.potencia(5.6,3));
+        assertEquals(175.62, producto.potencia(5.6,3),0.01);
 
     }
 }

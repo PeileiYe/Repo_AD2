@@ -39,7 +39,7 @@ public class Producto {
     }
 
     /**
-     * Realiza el producto de tres números reales.
+     * Realiza el producto de tres números reales
      *
      * @param num1 Primer número real.
      * @param num2 Segundo número real.
@@ -47,7 +47,7 @@ public class Producto {
      * @return El producto de los tres números reales.
      */
     public double multiplicarTresReales(double num1, double num2, double num3) {
-        return Math.round(num1 * num2 * num3*100.0) / 100.0;
+        return num1 * num2 * num3;
     }
 
     /**
@@ -58,7 +58,7 @@ public class Producto {
      * @return El resultado de la operación de potencia.
      */
     public double potencia(double base, double exponente) {
-        return Math.round(Math.pow(base, exponente)*100.0) / 100.0;
+        return Math.pow(base, exponente);
     }
 
 }
