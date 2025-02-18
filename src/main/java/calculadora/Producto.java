@@ -24,7 +24,7 @@ public class Producto {
      * @return El producto de los dos números reales.
      */
     public double multiplicarDosReales(double num1, double num2) {
-        return Math.round(num1 * num2*100.0) / 100.0;
+        return num1 * num2;
     }
 
     /**
@@ -47,6 +47,7 @@ public class Producto {
      * @return El producto de los tres números reales.
      */
     public double multiplicarTresReales(double num1, double num2, double num3) {
+
         return num1 * num2 * num3;
     }
 
