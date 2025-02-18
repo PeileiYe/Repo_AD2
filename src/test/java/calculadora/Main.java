@@ -73,9 +73,8 @@ class Main {
 
     @Test
     void restarAcumulado() {
-        resta.restarAcumulado(5);
-        assertEquals(-5, resta.restarAcumulado(0));
-        resta.restarAcumulado(2.5);
-        assertEquals(-7.5, resta.restarAcumulado(0));
+        assertEquals(-5.0, resta.restarAcumulado(5.0));
+        assertEquals(-7.5, resta.restarAcumulado(2.5));
+        assertEquals(-12.6,resta.restarAcumulado(5.1));
     }
 }
