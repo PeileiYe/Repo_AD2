@@ -5,86 +5,77 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 class Main {
-
-    private Suma suma;
-    private Producto producto;
+    private Resta resta;
+    private Cociente cociente;
 
 
     @BeforeEach
     void setUp() {
-        suma = new Suma();
-        producto = new Producto();
+        resta = new Resta();
+        cociente = new Cociente();
     }
 
     @Test
-    void sumarDosReales() {
-        suma.sumarDosReales(10.5, 21.7);
-        assertEquals(32.20, suma.sumarDosReales(10.5, 21.7),0.01);
-        suma.sumarDosReales(1.55,3.60);
-        assertEquals(5.15, suma.sumarDosReales(1.55,3.60),0.01);
+    void dividirDosReales() {
+        assertEquals(2.5, cociente.dividir(10.0, 4.0), 0.0001);
+        assertEquals(3.3, cociente.dividir(16.5, 5.0), 0.0001);
+
     }
 
     @Test
-    void sumarDosEnteros() {
-        suma.sumarDosEnteros(101, 259);
-        assertEquals(360, suma.sumarDosEnteros(101, 259));
-        suma.sumarDosEnteros(80,60);
-        assertEquals(140, suma.sumarDosEnteros(80,60));
+    void dividirDosEnteros() {
+        assertEquals(5, cociente.dividir(10, 2));
+        assertEquals(4, cociente.dividir(20, 5));
     }
 
     @Test
-    void sumarTresReales() {
-        suma.sumarTresReales(7.1, 11.6, 8.4);
-        assertEquals(27.10, suma.sumarTresReales(7.1, 11.6, 8.4),0.01);
-        suma.sumarTresReales(5.6,20.1,11.31);
-        assertEquals(37.01, suma.sumarTresReales(5.6,20.1,11.3),0.01);
+    void divisionPorCero() {
+        assertThrows(ArithmeticException.class, () -> cociente.dividir(10, 0));
+        assertThrows(ArithmeticException.class, () -> cociente.dividir(20.1, 0));
+    }
+
+
+    @Test
+    void inverso() {
+        assertEquals(0.25, cociente.inverso(4), 0.0001);
+        assertEquals(0.2, cociente.inverso(5), 0.0001);
     }
 
     @Test
-    void sumarAcumulado() {
-        suma.sumarAcumulado(316.67);
-        assertEquals(316.67, suma.getValorAcumulado(),0.01);
-        suma.sumarAcumulado(100.00);
-        assertEquals(416.67, suma.getValorAcumulado(),0.01);
-        suma.sumarAcumulado(51.01);
-        assertEquals(467.68, suma.getValorAcumulado(),0.01);
+    void raiz() {
+        assertEquals(4, cociente.raiz(16), 0.0001);
+        assertEquals(25, cociente.raiz(625), 0.0001);
     }
 
     @Test
-    void reiniciarValorAcumulado() {suma.reiniciarValorAcumulado();
-        assertEquals(0.0, suma.getValorAcumulado());
+    void raizNumeroNegativo() {
+        assertThrows(IllegalArgumentException.class, () -> cociente.raiz(-1));
+        assertThrows(IllegalArgumentException.class, () -> cociente.raiz(-16));
     }
 
     @Test
-    void multiplicarDosReales() {producto.multiplicarDosReales(1.1,2.2);
-        assertEquals(2.42, producto.multiplicarDosReales(1.1,2.2), 0.01);
-        producto.multiplicarDosReales(40.2,5.8);
-        assertEquals(233.16, producto.multiplicarDosReales(40.2,5.8), 0.01);
+    void restarDosEnteros() {
+        assertEquals(5, resta.restar(10, 5));
+        assertEquals(8, resta.restar(23, 15));
     }
 
     @Test
-    void multiplicarDosEnteros() {producto.multiplicarDosEnteros(2,14);
-        assertEquals(28, producto.multiplicarDosEnteros(2,14));
-        producto.multiplicarDosEnteros(8,20);
-        assertEquals(160, producto.multiplicarDosEnteros(8,20));
+    void restarDosReales() {
+        assertEquals(6.3, resta.restar(10.5, 4.2), 0.0001);
+        assertEquals(5.31, resta.restar(15.31, 10.00), 0.0001);
     }
 
     @Test
-    void multiplicarTresReales() {
-        producto.multiplicarTresReales(2.2,10.5,3.4);
-        assertEquals(78.54, producto.multiplicarTresReales(2.2,10.5,3.4),0.01);
-        producto.multiplicarTresReales(1.1,1.1,1.1);
-        assertEquals(1.331, producto.multiplicarTresReales(1.1,1.1,1.1),0.001);
+    void restarTresReales() {
+        assertEquals(5.2, resta.restar(20.5, 10.1, 5.2), 0.0001);
+        assertEquals(33.32, resta.restar(48.67, 10.13, 5.22), 0.0001);
     }
 
     @Test
-    void potencia() {
-        producto.potencia(5.6,3);
-        assertEquals(175.62, producto.potencia(5.6,3),0.01);
-        producto.potencia(20.0,2);
-        assertEquals(400.00, producto.potencia(20.0,2),0.01);
-
+    void restarAcumulado() {
+        resta.restarAcumulado(5);
+        assertEquals(-5, resta.restarAcumulado(0));
+        resta.restarAcumulado(2.5);
+        assertEquals(-7.5, resta.restarAcumulado(0));
     }
-
-
 }
