@@ -1,74 +1,82 @@
 package calculadora;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.BeforeEach;
 
 import static org.junit.jupiter.api.Assertions.*;
+
 class Main {
 
     private Suma suma;
     private Producto producto;
 
 
-    @BeforeEach
-    void setUp() {
+    @BeforeEach void setUp() {
         suma = new Suma();
         producto = new Producto();
     }
 
+    /*Tests para la clase suma */
 
-
-    @Test
+        @Test
     void sumarDosReales() {
-        suma.sumarDosReales(10.5, 21.7);
-        assertEquals(32.2, suma.sumarDosReales(10.5, 21.7));
-    }
+            assertEquals(8.5, suma.sumarDosReales(3.1, 5.4),0.01);
+            assertEquals(3.33, suma.sumarDosReales(1.22,2.11),0.01);
+        }
 
     @Test
     void sumarDosEnteros() {
-        suma.sumarDosEnteros(101, 259);
-        assertEquals(360, suma.sumarDosEnteros(101, 259));
-    }
+            assertEquals(89, suma.sumarDosEnteros(78,11));
+            assertEquals(14, suma.sumarDosEnteros(9,5));
+        }
+
 
     @Test
     void sumarTresReales() {
-        suma.sumarTresReales(7.1, 11.6, 8.4);
-        assertEquals(27.1, suma.sumarTresReales(7.1, 11.6, 8.4));
+        assertEquals(3.15, suma.sumarTresReales(1.01, 1.04, 1.1),0.01);
+        assertEquals(18.6, suma.sumarTresReales(3.2,7.2,8.2),0.01);
     }
 
     @Test
     void sumarAcumulado() {
-        suma.sumarAcumulado(316.67);
-        assertEquals(316.67, suma.getValorAcumulado());
-        suma.sumarAcumulado(100.00);
-        assertEquals(416.67, suma.getValorAcumulado());
-        suma.sumarAcumulado(51.01);
-        assertEquals(467.68, suma.getValorAcumulado());
+        assertEquals(5.00,suma.sumarAcumulado(5.00),0.01);
+        assertEquals(6.10,suma.sumarAcumulado(1.10),0.01);
+        assertEquals(7.35,suma.sumarAcumulado(1.25),0.01);
     }
 
+
+
+
     @Test
-    void reiniciarValorAcumulado() {suma.reiniciarValorAcumulado();
+    void reiniciarValorAcumulado() {
+        suma.reiniciarValorAcumulado();
         assertEquals(0.0, suma.getValorAcumulado());
     }
 
+    /* Tests para la clase Producto */
+
     @Test
-    void multiplicarDosReales() {producto.multiplicarDosReales(1.1,2.2);
+    void multiplicarDosReales() {
+        producto.multiplicarDosReales(1.1,2.2);
         assertEquals(2.42, producto.multiplicarDosReales(1.1,2.2), 0.01);
+        producto.multiplicarDosReales(40.2,5.8);
     }
 
     @Test
-    void multiplicarDosEnteros() {producto.multiplicarDosEnteros(2,14);
-        assertEquals(28, producto.multiplicarDosEnteros(2,14));
+    void multiplicarDosEnteros() {
+        assertEquals(12, producto.multiplicarDosEnteros(3,4));
+        assertEquals(365, producto.multiplicarDosEnteros(73,5));
     }
 
     @Test
-    void multiplicarTresReales() {producto.multiplicarTresReales(2.2,10.5,3.4);
-        assertEquals(78.54, producto.multiplicarTresReales(2.2,10.5,3.4),0.01);
+    void multiplicarTresReales() {
+        assertEquals(50.82, producto.multiplicarTresReales(5.5,4.4,2.1),0.01);
+        assertEquals(35.397, producto.multiplicarTresReales(3.3,3.3,3.3),0.01);
     }
 
     @Test
-    void potencia() {producto.potencia(5.6,3);
-        assertEquals(175.62, producto.potencia(5.6,3),0.01);
-
+    void potencia() {
+        assertEquals(144, producto.potencia(12,2),0.01);
+        assertEquals(35.937, producto.potencia(3.3,3),0.01);
     }
 }
