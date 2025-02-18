@@ -1,5 +1,13 @@
 package calculadora;
 
+/**
+ * Tests con Junit para las 4 clases de la calculadora con todos sus metodos
+ *
+ * @author Gonzalo Lozano Rosch (github: GLozRos)
+ * @author Peilei Ye Jin (github: PeileiYe)
+ * @version 1.0
+ */
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -20,7 +28,7 @@ class Main {
         cociente = new Cociente();
     }
 
-    /*Tests para la clase suma */
+    /**Tests para la clase suma*/
 
         @Test
     void sumarDosReales() {
@@ -54,7 +62,7 @@ class Main {
         assertEquals(0.0, suma.getValorAcumulado());
     }
 
-    /* Tests para la clase Producto */
+    /** Tests para la clase Producto */
 
     @Test
     void multiplicarDosReales() {
@@ -81,9 +89,8 @@ class Main {
         assertEquals(35.937, producto.potencia(3.3,3),0.01);
     }
 
-    >>>>>>> gonzalo
 
-    /* Tests para la clase Resta */
+    /** Tests para la clase Resta */
 
     @Test
     void restarDosEnteros() {
@@ -109,7 +116,7 @@ class Main {
         assertEquals(-7.5, resta.restarAcumulado(2.5));
         assertEquals(-12.6,resta.restarAcumulado(5.1));
     }
-   /* Tests pra la clase Cociente */
+   /** Tests pra la clase Cociente */
 
     @Test
     void dividirDosReales() {
@@ -148,5 +155,4 @@ class Main {
         assertThrows(IllegalArgumentException.class, () -> cociente.raiz(-1));
         assertThrows(IllegalArgumentException.class, () -> cociente.raiz(-16));
     }
-    >>>>>>> Peilei Ye Jin
 }
