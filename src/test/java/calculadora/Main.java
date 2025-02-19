@@ -1,5 +1,17 @@
 package calculadora;
 
+/**
+ * Tests para las clases de Resta y Cociente.
+ *
+ * @author Peilei Ye Jin (aka PeileiYe@github.com)
+ * <p>Repositorio GitHub: https://github.com/PeileiYe/Repo_AD2</p>
+ *
+ * @version 2.0
+ * <p>Principales cambios: </p>
+ * <pre>simplificado los tests utilizando solo assertThrows y assetEquals;</pre>
+ * <pre>añadido argumento delta para controlar resultados;</pre>
+ */
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -14,6 +26,10 @@ class Main {
         resta = new Resta();
         cociente = new Cociente();
     }
+
+    /**
+     * Tests clase Cociente.
+     */
 
     @Test
     void dividirDosReales() {
@@ -52,6 +68,11 @@ class Main {
         assertThrows(IllegalArgumentException.class, () -> cociente.raiz(-1));
         assertThrows(IllegalArgumentException.class, () -> cociente.raiz(-16));
     }
+
+
+    /**
+     * Tests clase Resta.
+     */
 
     @Test
     void restarDosEnteros() {
