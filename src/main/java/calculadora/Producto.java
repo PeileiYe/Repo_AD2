@@ -11,7 +11,12 @@ import java.text.DecimalFormat;
  * }</pre>
  *
  * @author Peilei Ye Jin (aka PeileiYe@github.com)
- * @version 1.0
+ * <p>Repositorio GitHub: https://github.com/PeileiYe/Repo_AD2</p>
+ *
+ * @version 2.0
+ *  <p>Principales cambios:</p>
+ *  <pre>sustituir metodos sobrecargados por metodos diferentes para evitar confusion</pre>
+ *  <pre>ejemplo: multiplicar (double num1, double num2) >> multiplicarDosReales (double num1, double num2)</pre>
  */
 
 public class Producto {
@@ -23,6 +28,7 @@ public class Producto {
      * @param num2 Segundo número real.
      * @return El producto de los dos números reales.
      */
+
     public double multiplicarDosReales(double num1, double num2) {
         return num1 * num2;
     }

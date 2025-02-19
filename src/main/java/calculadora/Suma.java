@@ -10,7 +10,12 @@ package calculadora;
  * }</pre>
  *
  * @author Peilei Ye Jin (aka PeileiYe@github.com)
- * @version 1.0
+ * <p>Repositorio GitHub: https://github.com/PeileiYe/Repo_AD2</p>
+ * 
+ * @version 2.0
+ * <p>Principales cambios:</p>
+ * <pre>sustituir metodos sobrecargados por metodos diferentes para evitar confusion</pre>
+ * <pre>ejemplo: sumar (double num1, double num2) >> sumarDosReales (double num1, double num2)</pre>
  */
 
 public class Suma {
